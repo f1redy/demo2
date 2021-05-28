@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace gestion.site.Controllers.Maestros
 {
-    [Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN, DIRECTOR")]
     [Route("api/maestros/[controller]")]
     [ApiController]
     [ResponseCache(CacheProfileName = "Never")]

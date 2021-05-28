@@ -1,6 +1,7 @@
 ﻿using gestion.site.Core;
 using gestion.site.Data;
 using gestion.site.Model.Site;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace gestion.site.Controllers
 {
- 
+    [Authorize(Roles = "ADMIN, DIRECTOR, SUPERVISOR")]
     [Route("api/[controller]")]
     [ApiController]
     public class ReportesController : ControllerBase

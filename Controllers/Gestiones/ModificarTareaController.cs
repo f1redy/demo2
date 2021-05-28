@@ -78,7 +78,7 @@ namespace gestion.site.Controllers.Maestros
             }
             return ret;
         }
-
+        [Authorize(Roles = "SUPERVISOR")]
         [HttpDelete("asignacion/{tarea}/{especialista}")]
         public async Task<dynamic> EliminarAsignacion(long tarea, int especialista)
         {
@@ -111,7 +111,7 @@ namespace gestion.site.Controllers.Maestros
 
             return Ok();
         }
-
+        [Authorize(Roles = "DIRECTOR")]
         [HttpPut("anular/{id}")]
         public async Task<dynamic> Anular(long id)
         {
@@ -146,6 +146,7 @@ namespace gestion.site.Controllers.Maestros
 
             return Ok();
         }
+        [Authorize(Roles = "ESPECIALISTA")]
         [HttpPut("estado/{id}/{estado}")]
         public async Task<dynamic> Estado(long id, int estado)
         {
